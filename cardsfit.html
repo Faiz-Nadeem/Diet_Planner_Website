@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+        
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color:lavenderblush;
+ margin-top: 150px;
+}
+
+body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+
+}
+
+body .container .card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(255, 154, 154, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  transition: 0.5s;
+}
+
+body .container .card:nth-child(1) .box .content a {
+  background: #2196f3;
+}
+
+body .container .card:nth-child(2) .box .content a {
+  background: #e91e63;
+}
+
+body .container .card:nth-child(3) .box .content a {
+  background: #23c186;
+}
+
+body .container .card .box  {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  /* background-image:url("images/image_1.jpg");
+  background-size: 400px;
+  background-repeat: no-repeat; */
+  
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+body .container .card .box .content .card1 {
+ 
+  background-image:url("images/keto.png");
+  background-size: 250px;
+  background-repeat: no-repeat;
+  
+
+}
+body .container .card .box .content .card2 {
+ 
+ background-image:url("images/paleo.png");
+ background-size: 241px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card3 {
+ 
+ background-image:url("images/vegan.png");
+ background-size: 275px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card4 {
+ 
+ background-image:url("images/Mediterranean.png");
+ background-size: 230px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card5 {
+ 
+ background-image:url("images/dukan.png");
+ background-size: 241px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card6 {
+ 
+ background-image:url("images/No\ carb.png");
+ background-size: 241px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card7{
+ 
+ background-image:url("images/low\ carb.png");
+ background-size: 241px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card8 {
+ 
+ background-image:url("images/fibre.png");
+ background-size: 250px;
+ background-repeat: no-repeat;
+ 
+
+}
+body .container .card .box .content .card9 {
+ 
+ background-image:url("images/protein.png");
+ background-size: 261px;
+ background-repeat: no-repeat;
+ 
+
+}
+
+body .container .card .box:hover {
+  transform: translateY(-50px);
+
+
+}
+
+body .container .card .box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* background: rgba(255, 255, 255, 0.03); */
+}
+
+body .container .card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+
+body .container .card .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+body .container .card .box .content h3 {
+  font-size: 1.8rem;
+  color: black;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+body .container .card .box .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: black;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+body .container .card .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+body .container .card .box .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #fff;
+  color: #000;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg   ftco-navbar-light fixed-top" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand " href="index.html">Health</a>
+	     
+	      <div class="collapse navbar-collapse" >
+	        <ul  class="navbar-nav ml-auto">
+	        	<li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>  <!--active yahan iss liyh use hua hai taky home page py home blue color ka ho jaye or under line bhi blue ho jaye as active show ho -->
+	        	<li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
+	        	<li class="nav-item"><a href="login.html.html" class="nav-link">Login</a></li>
+	        	
+	        	<li class="nav-item active"><a href="cardsfit.html" class="nav-link">Services</a></li>
+	        
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <div class="container">
+        <div class="card">
+          <div class="box">
+            <div class="content ">
+              <div class="card1">
+              <h2>01</h2>
+              <h3>Keto Diet</h3>
+              <p>The idea is for you to get more calories from protein and fat and less from carbohydrates. You cut back most on the carbs that are easy to digest, like sugar, soda, pastries, and white bread.</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content ">
+            <div class="card2">
+              <h2>02</h2>
+              <h3>Paleo Diet</h3>
+              <p> includes lean meats, fish, fruits, vegetables, nuts, and seeds. Proponents of the diet emphasize choosing low-glycemic fruits and vegetables.</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card3">
+              <h2>03</h2>
+              <h3>Vegan Diet</h3>
+              <p>excludes all animal products, including meat, dairy, and eggs. </p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card4">
+              <h2>04</h2>
+              <h3>Mediterranean</h3>
+              <p>Includes Fish, seafood, dairy and poultry are included in moderation</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card5">
+              <h2>05</h2>
+              <h3>Dukan Diet</h3>
+              <p>Includes a lot of protein and oat bran.</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card6">
+              <h2>06</h2>
+              <h3>No Carb Diet</h3>
+              <p>Eliminates almost all carbs, including whole grains, fruits, and most vegetables.</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card7">
+              <h2>07</h2>
+              <h3>Low Carb Diet</h3>
+              <p>Egg omelet with mushrooms, bell peppers, onions, grapefruit, toast; chili with beans, cornbread, side green salad; halibut, lemon, green beans, roasted potatoes</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card8">
+              <h2>08</h2>
+              <h3>Food Rich In Fibre</h3>
+              <p>Includes cup oatmeal , non-fat milk, honey ,blueberries, plain coffee or tea</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <div class="card9">
+              <h2>09</h2>
+              <h3>Food Rich in Protein</h3>
+              <p>Egg and ham breakfast burrito with cheese, spinach, orange juice; whole wheat sandwich with tuna, Greek yogurt, mayo, arugula, side green salad; sirloin steak, broccoli, baked sweet potato</p>
+              <a href="#">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-4 col-lg-5">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-8 mb-md-0 mb-4">
+                            <h2 class="footer-heading"><a href="#"  >Health<span>care</span></a></h2>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-7">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h2 class="footer-heading">Services</h2>
+                            <ul class="list-unstyled">
+                  <li><a href="#" class="py-1 d-block">Balance Body</a></li>
+                  <li><a href="#" class="py-1 d-block">Physical Activity</a></li>
+                  <li><a href="#" class="py-1 d-block">Fitness Program</a></li>
+                  <li><a href="#" class="py-1 d-block">Healthy Food</a></li>
+                </ul>
+                        </div>
+                        
+                    
+                        <div class="col-md-3 ">
+                            <h2 class="footer-heading">Social</h2>
+                            <ul class="list-unstyled">
+                  <li><a href="#" class="py-1 d-block">Facebook</a></li>
+                  <li><a href="#" class="py-1 d-block">Twitter</a></li>
+                  <li><a href="#" class="py-1 d-block">Instagram</a></li>
+                  <li><a href="#" class="py-1 d-block">Google</a></li>
+                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+      <div class="col-md-6 col-lg-8">
+
+        <p class="copyright">
+Copyright &copy; We completed this project together hope u'll like it MAAM HIRA &#128512  by <a href="#" target="_blank"><br> FAIZ20sw039/&#128521 <br>FIZA20sw063/&#128522<br> SHIZA20sw024/ &#128524<br>RABIYA20sw124 &#128527 </a></p>
+      </div>
+      <div class="col-md-6 col-lg-4 text-md-right">
+          <p class="mb-0 list-unstyled">
+              <a class="mr-md-3" href="#">Terms</a>
+              <a class="mr-md-3" href="#">Privacy</a>
+              <a class="mr-md-3" href="#">Compliances</a>
+          </p>
+      </div>
+    </div>
+        </div>
+    </footer>
+</body>
+</html>

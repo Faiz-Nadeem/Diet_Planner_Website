@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fitness Tracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+	<style>
+          @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+    .owl-carousel,.owl-carousel .owl-item{
+      -webkit-tap-highlight-color:transparent;
+      position:relative}
+
+    .owl-carousel{
+      display:none;
+      width:100%;
+      z-index:1}
+      
+    .owl-carousel .owl-stage{
+      position:relative;
+      -ms-touch-action:pan-Y;
+      touch-action:manipulation;
+      -moz-backface-visibility:hidden}
+      
+    
+    .owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+    .owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}
+    .owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}
+    .owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}
+    .owl-carousel .owl-item img{display:block;width:100%}
+    .owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}
+    .no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}
+    .owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;cursor:hand;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+    .owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}
+    .owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}
+    .owl-carousel.owl-drag .owl-item{-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+    .owl-carousel.owl-grab{cursor:move;cursor:grab}
+    .owl-carousel.owl-rtl{direction:rtl}
+    .owl-carousel.owl-rtl .owl-item{float:right}
+    .owl-carousel .animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+    .owl-carousel .owl-animated-in{z-index:0}
+    .owl-carousel .owl-animated-out{z-index:1}
+    .owl-carousel .fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut}@-webkit-keyframes fadeOut{0%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}
+    .owl-height{transition:height .5s ease-in-out}
+    .owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}
+    .owl-carousel .owl-item img.owl-lazy{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
+    .owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}
+    .owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:-webkit-transform .1s ease;transition:transform .1s ease}
+    .owl-carousel .owl-video-play-icon:hover{-webkit-transform:scale(1.3,1.3);-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}
+    .owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}
+    .owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}
+    .owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}
+		body{
+			background-color:lavenderblush;
+		}
+    .fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+	</style>
+  </head>
+  <body>
+		<nav class="navbar navbar-expand-lg   ftco-navbar-light fixed-top" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand " href="index.html">Health</a>
+	     
+	      <div class="collapse navbar-collapse" >
+	        <ul  class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>  <!--active yahan iss liyh use hua hai taky home page py home blue color ka ho jaye or under line bhi blue ho jaye as active show ho -->
+	        	<li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
+	        	<li class="nav-item"><a href="login.html.html" class="nav-link">Login</a></li>
+	        	
+	        	<li class="nav-item"><a href="cardsfit.html" class="nav-link">Services</a></li>
+	        
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <div>
+	    <div class="home-slider owl-carousel ">
+	      <div class="slider-item " style="background-image:url(images/bg_1.jpg);">
+	        <div class="container">
+	          <div class="row  slider-text align-items-center">
+		          <div class="col-md-7 ">
+		          	<div >
+		          		<h2>Welcome to Health Coach</h2>
+			            <h1 ><b>Get in shape faster, live your happy life</b></h1>
+			            <p><a href="#" class="btn btn-primary">Learn more</a> <a href="#" class="btn btn-white">Contact us</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
+	        <div class="container">
+	          <div class="row  slider-text align-items-center">
+		          <div class="col-md-7 ">
+		          	<div >
+		          		<h2>A Fresh approach to healthy life</h2>
+			            <h1 class="mb-4 color-black"><b>Unlock your <b style="color:aliceblue;">potential</b> with good nutrition</b></h1>
+			            <p><a href="#" class="btn btn-primary">Learn more</a> <a href="#" class="btn btn-white">Contact us</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		
+    <section class="ftco-section ftco-services">
+    	<div class="container">
+    		<div class="row">
+          <div class="col-md-4  services">
+            <div class=" services-wrap text-center">
+              <div class="img" style="background-image: url(images/services-1.jpg);"></div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Exercise Program</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p><a href="#" class="btn btn-primary btn-outline-primary">Read more</a></p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4  services align-self-stretch">
+            <div class="d-block services-wrap text-center">
+              <div class="img" style="background-image: url(images/services-2.jpg);"></div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Nutrition Plans</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p><a href="#" class="btn btn-primary btn-outline-primary">Read more</a></p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 services align-self-stretch ">
+            <div class="d-block services-wrap text-center">
+              <div class="img" style="background-image: url(images/services-3.jpg);"></div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Diet Program</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p><a href="#" class="btn btn-primary btn-outline-primary">Read more</a></p>
+              </div>
+            </div>      
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section style="height: 500px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 p-md-5 img " style="background-image: url(images/coach-1.jpg);">
+					</div>
+					<div class="col-md-7">
+	          <div class="heading-section mb-5">
+	          	<div class="pl-md-5">
+		          	<span class="subheading ">Welcome to Healthcare</span>
+		            <h2 class="mb-2">Hello! Health Care is a natural way of improving your health</h2>
+	            </div>
+	          </div>
+	          <div class="pl-md-5">
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>	
+			</div>
+		</section>
+
+		<section style="height: 400px;">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-3 " style="border-style: double; height: 320px;">
+						<div class=" text-center px-4 px-md-5">
+							<h3 class="mb-4"><br> Healthcare Services</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<a href="#" >See Services</a>
+						</div>
+					</div>
+					<div class="col-md-6  align-items-stretch">
+						<div class="consultation  px-4 px-md-5">
+							<div class="text-center">
+								<h3 class="mb-4">Feedback</h3>
+							</div>
+							<form action="#" class="appointment-form">
+								<div class="row">
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div >
+				    					<input type="text" class="form-control" placeholder="First Name">
+				    				</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div class="form-group">
+				    					<input type="text" class="form-control" placeholder="Last Name">
+				    				</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div class="form-group">
+				    					<div class="form-field">
+		          					<div class="select-wrap">
+		                      
+		                      <select name="" id="" class="form-control">
+		                      	<option value="">Services or Plan</option>
+		                        
+		                      </select>
+		                    </div>
+				              </div>
+				    				</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div class="form-group">
+				    					<div class="input-wrap">
+				            		
+				            		<input type="text" class="form-control appointment_date" placeholder="Weight">
+			            		</div>
+				    				</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div class="form-group">
+				    					<div class="input-wrap">
+				            		
+				            		<input type="text" class="form-control appointment_time" placeholder="Time">
+			            		</div>
+				    				</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-4">
+										<div class="form-group">
+				            
+                      <li class="btn btn-white py-2 px-4"><a href="login.html.html" >Submit</a></li>
+				            </div>
+									</div>
+								</div>
+		    			</form>
+		    	  </div>
+					</div>
+					<div class="col-md-3  align-items-stretch">
+						<div class="  text-center px-5 px-md-4"style="border-style: double; height: 330px;">
+							<h3 class="mb-4"><br>Find A Health Expert</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<a href="#" class="btn-custom">Meet our health coach</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+  
+
+
+    
+    <section class=" testimony-section " style="background-color: rgb(242, 245, 255); height: 600px;">
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ">
+          	
+            <h2><br><br>Happy Clients &amp; Feedbacks</h2>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+							<div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote  align-items-center justify-content-center">
+                      <i class="fa fa-quote-left"></i>
+                    </span>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Maker1</p>
+                    <span class="position">Father</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="fa fa-quote-left"></i>
+                    </span>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Maker2</p>
+                    <span class="position">Businessman</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(images/person_4.jpg)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="fa fa-quote-left"></i>
+                    </span>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Maker3</p>
+                    <span class="position">Businesman</span>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ">
+          	<span class="subheading mb-3">Other Services</span>
+            <h2>How it works?</h2>
+          </div>
+        </div>
+    		<div class="row">
+          <div class="col-md-3 d-flex services align-self-stretch ">
+            <div class="d-block text-center">
+              <div class="icon d-flex ">
+            		<img src="images/website.png" style="background-color: lavenderblush;">
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Follow the program</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex services align-self-stretch ">
+            <div class="d-block text-center">
+              <div class="icon d-flex ">
+                <img src="images/web-development.png" style="background-color: lavenderblush;">
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Work for result</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 d-flex services align-self-stretch ">
+            <div class="d-block text-center">
+              <div class="icon d-flex ">
+                <img src="images/diet.png" style="background-color: lavenderblush;">
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Eat healthy food</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex services align-self-stretch ">
+            <div class="d-block text-center">
+              <div class="icon d-flex ">
+                <img src="images/adzan.png" style="background-color: lavenderblush;">
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Enjoy your life</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+    	</div>
+    </section>
+
+	
+		
+		<section class="ftco-intro" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<h2>We Provide Free Health Care Consultation</h2>
+						<p class="mb-0">Your Health is Our Top Priority with Comprehensive, Affordable Health.</p>
+						<p></p>
+					</div>
+					<div class="col-md-3 d-flex align-items-center">
+						<p class="mb-0"><a href="login.html.html" class="btn btn-white px-4 py-3">Free Consultation</a>
+            </p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+   
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ">
+            <h2>Latest news from our blog</h2>
+            <span class="subheading">News &amp; Blog</span>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 ">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text mt-3">
+              	<div class="meta mb-2">
+                  <div><a href="#">January 30, 2022</a></div>
+                  <div><a href="#">FAIZ </a></div>
+                  
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="blog-entry ">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text mt-3">
+              	<div class="meta mb-2">
+                  <div><a href="#">January 30, 2020</a></div>
+                  <div><a href="#"></a>FIZA</div>
+                  
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="blog-entry ">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text mt-3">
+              	<div class="meta mb-2">
+                  <div><a href="#">January 30, 2020</a></div>
+                  <div><a href="#">SHIZA</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+
+
+
+    <footer class="footer">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-md-4 col-lg-5">
+						<div class="row">
+							<div class="col-md-12 col-lg-8 mb-md-0 mb-4">
+								<h2 class="footer-heading"><a href="#"  >Health<span>care</span></a></h2>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+								<a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 col-lg-7">
+						<div class="row">
+							<div class="col-md-7">
+								<h2 class="footer-heading">Services</h2>
+								<ul class="list-unstyled">
+		              <li><a href="#" class="py-1 d-block">Balance Body</a></li>
+		              <li><a href="#" class="py-1 d-block">Physical Activity</a></li>
+		              <li><a href="#" class="py-1 d-block">Fitness Program</a></li>
+		              <li><a href="#" class="py-1 d-block">Healthy Food</a></li>
+		            </ul>
+							</div>
+							
+						
+							<div class="col-md-3 ">
+								<h2 class="footer-heading">Social</h2>
+								<ul class="list-unstyled">
+		              <li><a href="#" class="py-1 d-block">Facebook</a></li>
+		              <li><a href="#" class="py-1 d-block">Twitter</a></li>
+		              <li><a href="#" class="py-1 d-block">Instagram</a></li>
+		              <li><a href="#" class="py-1 d-block">Google</a></li>
+		            </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+          <div class="col-md-6 col-lg-8">
+
+            <p class="copyright">
+  Copyright &copy; We completed this project together hope u'll like it MAAM HIRA &#128512  by <a href="#" target="_blank"><br> FAIZ20sw039/&#128521 <br>FIZA20sw063/&#128522<br> SHIZA20sw024/ &#128524<br>RABIYA20sw124 &#128527 </a></p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-md-right">
+          	<p class="mb-0 list-unstyled">
+          		<a class="mr-md-3" href="#">Terms</a>
+          		<a class="mr-md-3" href="#">Privacy</a>
+          		<a class="mr-md-3" href="#">Compliances</a>
+          	</p>
+          </div>
+        </div>
+			</div>
+		</footer>
+    
+  
+
+  <!-- loader -->
+  <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>-->
+
+
+   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/main.js"></script> 
+
+
+    
+  </body>
+</html>
